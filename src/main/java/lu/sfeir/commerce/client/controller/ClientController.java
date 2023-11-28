@@ -40,7 +40,8 @@ public class ClientController implements ClientsApi {
 
 	@Override
 	public ResponseEntity<ClientDto> getClientById(Long clientId) {
-		return ResponseEntity.ok(clientService.getById(clientId).orElseThrow(() -> new EntityNotFoundException()));
+		return ResponseEntity.ok(clientService.getById(clientId)
+				.orElseThrow(() -> new EntityNotFoundException("Entity with id " + clientId + " not found ")));
 	}
 
 	@Override

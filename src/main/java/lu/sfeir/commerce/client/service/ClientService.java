@@ -37,7 +37,7 @@ public class ClientService {
 	public ClientDto updateClient(Long id, ClientDto clientDto) {
 		Optional<Client> clientOpt = this.clientRepository.findById(id);
 		if(clientOpt.isEmpty()) {
-			throw new EntityNotFoundException();
+			throw new EntityNotFoundException("Entity with id "+id+" not found.");
 		}
 		Client client = this.clientRepository.save(clientDtoMapper.map(clientOpt.get(),clientDto));
 		

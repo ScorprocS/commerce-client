@@ -3,15 +3,15 @@ package lu.sfeir.commerce.client.config;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.kafka.clients.producer.ProducerConfig;
-import org.apache.kafka.common.serialization.StringSerializer;
+//import org.apache.kafka.clients.producer.ProducerConfig;
+//import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.kafka.core.DefaultKafkaProducerFactory;
-import org.springframework.kafka.core.KafkaTemplate;
-import org.springframework.kafka.core.ProducerFactory;
-import org.springframework.kafka.support.serializer.JsonSerializer;
+//import org.springframework.kafka.core.DefaultKafkaProducerFactory;
+//import org.springframework.kafka.core.KafkaTemplate;
+//import org.springframework.kafka.core.ProducerFactory;
+//import org.springframework.kafka.support.serializer.JsonSerializer;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -20,10 +20,10 @@ import lu.sfeir.commerce.client.service.EventWrapper;
 
 @Configuration
 public class KafkaProducerConfig {
-	@Value(value = "${kafka.bootstrapAddress}")
+	//@Value(value = "${kafka.bootstrapAddress}")
     private String bootstrapAddress;
 
-	@Bean
+	/*@Bean
     public ProducerFactory<String,  EventWrapper<Client>> producerFactory() {
         Map<String, Object> configProps = new HashMap<>();
         configProps.put(
@@ -41,7 +41,7 @@ public class KafkaProducerConfig {
     @Bean
     public KafkaTemplate<String,  EventWrapper<Client>> kafkaTemplate() {
         return new KafkaTemplate<>(producerFactory());
-    }
+    }*/
     
     @Bean 
     public ObjectMapper objectMapper() {

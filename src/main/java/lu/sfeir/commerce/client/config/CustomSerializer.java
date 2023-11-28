@@ -1,6 +1,6 @@
 package lu.sfeir.commerce.client.config;
 
-import org.apache.kafka.common.serialization.Serializer;
+//import org.apache.kafka.common.serialization.Serializer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -11,12 +11,12 @@ import lu.sfeir.commerce.client.entity.Client;
 import lu.sfeir.commerce.client.service.EventWrapper;
 
 @Component
-public class CustomSerializer implements Serializer<EventWrapper<Client>>{
+public class CustomSerializer {//implements Serializer<EventWrapper<Client>>{
 
 	@Autowired
 	private ObjectMapper objectMapper;
 
-
+/*
 	@Override
 	public byte[] serialize(String topic, EventWrapper<Client> data) {
 		
@@ -26,6 +26,6 @@ public class CustomSerializer implements Serializer<EventWrapper<Client>>{
 			
 		}
 		return null;
-	}
+	}*/
 
 }

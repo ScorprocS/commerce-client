@@ -1,13 +1,13 @@
 package lu.sfeir.commerce.client.exception;
 
-public class EntityNotFoundException extends RuntimeException {
+public class InvalidParameterException extends RuntimeException {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	public EntityNotFoundException(String message) {
+	public InvalidParameterException(String message) {
 		super(message);
 	}
 

@@ -58,10 +58,10 @@
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.kafka</groupId>
-			<artifactId>spring-kafka</artifactId>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.kafka</groupId>-->
+<!--			<artifactId>spring-kafka</artifactId>-->
+<!--		</dependency>-->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
@@ -150,6 +150,11 @@
 								<useJakartaEe>true</useJakartaEe>
 								<dateLibrary>java8</dateLibrary>
 								<useBeanValidation>true</useBeanValidation>
+								<additionalModelTypeAnnotations>
+									@lombok.Builder
+									@lombok.NoArgsConstructor
+   									@lombok.AllArgsConstructor
+								</additionalModelTypeAnnotations>
 							</configOptions>
 						</configuration>
 					</execution>
