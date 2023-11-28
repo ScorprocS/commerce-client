@@ -21,7 +21,7 @@ public class LoggingAspect {
 	@Autowired
 	private ObjectMapper mapper;
 	
-	@Pointcut(value="execution(* lu.sfeir.commerce.client.restrepository.*.*(..))")
+	@Pointcut(value="execution(* lu.sfeir.commerce.client.controller.*.*(..))")
 	public void loggingControllerPointCut() {
 		
 	}

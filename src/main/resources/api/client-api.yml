@@ -128,12 +128,6 @@ paths:
       description: delete a Client
       operationId: deleteClient
       parameters:
-        - name: api_key
-          in: header
-          description: ''
-          required: false
-          schema:
-            type: string
         - name: clientId
           in: path
           description: Client id to delete
@@ -165,12 +159,7 @@ components:
           type: string
           example: Doe
         address:
-          type: array
-          xml:
-            name: addresses
-            wrapped: true
-          items:
-            $ref: '#/components/schemas/Address'
+          $ref: '#/components/schemas/Address'
       xml:
         name: customer
     Address:
