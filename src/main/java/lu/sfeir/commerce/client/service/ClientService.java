@@ -21,7 +21,7 @@ public class ClientService {
 	private final ClientDtoMapper clientDtoMapper;
 	
 	public List<ClientDto> getAll(){
-		return this.clientRepository.findAll().stream().map(clientDtoMapper::map).collect(Collectors.toList());
+		return this.clientRepository.findAll().stream().map(clientDtoMapper::map).toList();
 	}
 	
 	public Optional<ClientDto> getById(Long id){
