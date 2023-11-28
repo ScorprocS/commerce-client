@@ -2,6 +2,14 @@ server:
   port: 8080
   servlet:
     context-path: /api
+    
+management:
+  endpoints:
+    enabled-by-default: true
+    health.enabled: true
+    enabled: true
+    web.exposure.include: health,info
+
 spring:
   application:
     name: CLIENT-SERVICE
