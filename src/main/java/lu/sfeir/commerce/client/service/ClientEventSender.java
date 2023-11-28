@@ -12,7 +12,7 @@ import lu.sfeir.commerce.client.entity.Client;
 
 @Service
 public class ClientEventSender {
-	@Value("${kafka.topicName}")
+	//@Value("${kafka.topicName}")
 	private String topicName;
 	//@Autowired
 	//private KafkaTemplate<String, EventWrapper<Client>> kafkaTemplate;
