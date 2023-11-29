@@ -1,5 +1,6 @@
 package lu.sfeir.commerce.client.controller;
 
+import jakarta.transaction.Transactional;
 import lombok.Getter;
 import lu.sfeir.commerce.client.clientapi.dto.ClientDto;
 import org.junit.jupiter.api.DisplayName;
@@ -21,6 +22,7 @@ class ClientControllerTest extends AbstractControllerTest {
     class GetClient {
 
         @Test
+        @Transactional
         void found() throws Exception {
             var client = addClient(
                     new ClientDto(null, "john.smith@acme.com", "John", "Smith", null)
@@ -37,7 +39,12 @@ class ClientControllerTest extends AbstractControllerTest {
         }
 
         @Test
+        @Transactional
         void notFound() throws Exception {
+            addClient(
+                    new ClientDto(null, "john.smith@acme.com", "John", "Smith", null) // noise
+            );
+
             mockMvc.perform(
                             get("/clients/1234567890")
                                     .accept(MediaType.APPLICATION_JSON)
