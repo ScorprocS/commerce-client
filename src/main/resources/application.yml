@@ -6,13 +6,16 @@ server:
 management:
   endpoints:
     enabled-by-default: true
-    health.enabled: true
-    enabled: true
+    health:
+      enabled: true
     web.exposure.include: health,info
 
 spring:
   application:
     name: CLIENT-SERVICE
+  threads:
+    virtual:
+      enabled: true
 eureka:
   client:
     register-with-eureka: true
@@ -21,3 +24,4 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
   instance:
     hostname: localhost
+

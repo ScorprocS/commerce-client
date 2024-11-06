@@ -1,0 +1,1 @@
+./mvnw package && java -jar target/commerce-client.jar
