@@ -1,0 +1,12 @@
+#FROM openjdk:21-jdk
+FROM openjdk:24-ea-21-jdk-slim AS builder
+#RUN addgroup -S spring && adduser -S spring -G spring
+#USER spring:spring
+ARG JAR_FILE=target/*.jar
+COPY ${JAR_FILE} app.jar
+RUN java -Djarmode=tools -jar app.jar extract
+
+
+FROM openjdk:24-ea-21-jdk-slim
+COPY --from=builder /app ./app
+ENTRYPOINT ["java","-jar","/app/app.jar"]
